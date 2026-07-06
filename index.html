@@ -3,32 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roue des Cadeaux - Salon</title>
+    <title>Roue Privilège - Excel Coiffure Carcassonne</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Merci pour votre avis Google ! ✨</h1>
-        <p class="subtitle">Tentez votre chance pour gagner un cadeau exclusif</p>
+    <div class="background-overlay"></div>
 
-        <div class="wheel-box">
-            <div class="pointer"></div>
-            <div class="wheel" id="wheel">
-                <!-- 8 sections alternées (4 gagnants / 4 perdants) -->
-                <div class="segment" style="--i:1; --bg:#222; --text:#fff;"><span>DÉSOLÉ</span></div>
-                <div class="segment" style="--i:2; --bg:#d4af37; --text:#000;"><span>-10%</span></div>
-                <div class="segment" style="--i:3; --bg:#222; --text:#fff;"><span>PAS CE SOIR</span></div>
-                <div class="segment" style="--i:4; --bg:#d4af37; --text:#000;"><span>SOIN AVEDA</span></div>
-                <div class="segment" style="--i:5; --bg:#222; --text:#fff;"><span>PERDU</span></div>
-                <div class="segment" style="--i:6; --bg:#d4af37; --text:#000;"><span>SCHWARZKOPF</span></div>
-                <div class="segment" style="--i:7; --bg:#222; --text:#fff;"><span>PLUS TARD</span></div>
-                <div class="segment" style="--i:8; --bg:#d4af37; --text:#000;"><span>SOIN PROFOND</span></div>
+    <div class="container">
+        
+        <div id="step-avis">
+            <h1>Excel Coiffure ✨</h1>
+            <p class="subtitle">Pont Rouge - Carcassonne</p>
+            
+            <div class="instruction-box">
+                <p>Pour vous remercier de votre visite, laissez-nous un avis sur Google et tentez instantanément votre chance à notre Roue des Privilèges !</p>
+                
+                <a href="https://www.google.com/search?q=Excel+Coiffure+Pont+Rouge+Carcassonne#lrd=0x12ae2c396df560db:0xc4ff6ebf4d7b21dc,3" target="_blank" class="btn-action-unique" onclick="startFlow()">
+                    ⭐ LAISSER UN AVIS & OUVRIR LA ROUE 🎁
+                </a>
             </div>
-            <button class="spin-btn" onclick="spin()">LANCER</button>
+            <p style="font-size: 11px; color: #666; font-style: italic; margin-top: 15px;">La roue des cadeaux se débloquera juste après votre clic.</p>
         </div>
 
-        <div id="result"></div>
+        <div id="step-roue" class="hidden-step">
+            <h1>Bonne chance ! 🍀</h1>
+            <p class="subtitle">Tournez la roue pour découvrir votre privilège</p>
+
+            <div class="wheel-box">
+                <div class="pointer"></div>
+                <canvas id="wheelCanvas" width="600" height="600"></canvas>
+                <button class="spin-btn" onclick="spin()">LANCER</button>
+            </div>
+
+            <div id="result-box" class="hidden">
+                <div class="result-content">
+                    <span class="result-icon">✨</span>
+                    <p id="result-text"></p>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script src="script.js"></script>
