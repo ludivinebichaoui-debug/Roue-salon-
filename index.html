@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roue des cadeaux - Salon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Tournez la roue ! 🎡</h1>
+    <p>Laissez votre avis sur Google et tentez de gagner un cadeau.</p>
+
+    <!-- Conteneur de la roue avec sa flèche -->
+    <div class="wheel-container">
+        <div class="arrow"></div>
+        <div class="wheel" id="wheel">
+            <!-- Les sections de la roue -->
+            <div class="segment" style="--i:1; --clr:#ff4757;"><span>Pas cette fois</span></div>
+            <div class="segment" style="--i:2; --clr:#2ed573;"><span>Masque</span></div>
+            <div class="segment" style="--i:3; --clr:#1e90ff;"><span>-10%</span></div>
+            <div class="segment" style="--i:4; --clr:#ffa502;"><span>Shampoing</span></div>
+            <div class="segment" style="--i:5; --clr:#9b59b6;"><span>Aveda</span></div>
+        </div>
+    </div>
+
+    <button onclick="spin()">Tourner la roue</button>
+
+    <div id="result"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
