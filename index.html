@@ -3,30 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roue des cadeaux - Salon</title>
+    <title>Roue des Cadeaux - Salon</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Tournez la roue ! 🎡</h1>
-    <p>Laissez votre avis sur Google et tentez de gagner un cadeau.</p>
+    <div class="container">
+        <h1>Merci pour votre avis Google ! ✨</h1>
+        <p class="subtitle">Tentez votre chance pour gagner un cadeau exclusif</p>
 
-    <!-- Conteneur de la roue avec sa flèche -->
-    <div class="wheel-container">
-        <div class="arrow"></div>
-        <div class="wheel" id="wheel">
-            <!-- Les sections de la roue -->
-            <div class="segment" style="--i:1; --clr:#ff4757;"><span>Pas cette fois</span></div>
-            <div class="segment" style="--i:2; --clr:#2ed573;"><span>Masque</span></div>
-            <div class="segment" style="--i:3; --clr:#1e90ff;"><span>-10%</span></div>
-            <div class="segment" style="--i:4; --clr:#ffa502;"><span>Shampoing</span></div>
-            <div class="segment" style="--i:5; --clr:#9b59b6;"><span>Aveda</span></div>
+        <div class="wheel-box">
+            <div class="pointer"></div>
+            <div class="wheel" id="wheel">
+                <!-- 8 sections alternées (4 gagnants / 4 perdants) -->
+                <div class="segment" style="--i:1; --bg:#222; --text:#fff;"><span>DÉSOLÉ</span></div>
+                <div class="segment" style="--i:2; --bg:#d4af37; --text:#000;"><span>-10%</span></div>
+                <div class="segment" style="--i:3; --bg:#222; --text:#fff;"><span>PAS CE SOIR</span></div>
+                <div class="segment" style="--i:4; --bg:#d4af37; --text:#000;"><span>SOIN AVEDA</span></div>
+                <div class="segment" style="--i:5; --bg:#222; --text:#fff;"><span>PERDU</span></div>
+                <div class="segment" style="--i:6; --bg:#d4af37; --text:#000;"><span>SCHWARZKOPF</span></div>
+                <div class="segment" style="--i:7; --bg:#222; --text:#fff;"><span>PLUS TARD</span></div>
+                <div class="segment" style="--i:8; --bg:#d4af37; --text:#000;"><span>SOIN PROFOND</span></div>
+            </div>
+            <button class="spin-btn" onclick="spin()">LANCER</button>
         </div>
+
+        <div id="result"></div>
     </div>
-
-    <button onclick="spin()">Tourner la roue</button>
-
-    <div id="result"></div>
 
     <script src="script.js"></script>
 </body>
